@@ -1,0 +1,20 @@
+
+<!DOCTYPE html>
+{% include 'customerheadernavbar.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Review</title>
+</head>
+<body>
+    <h2>Add Review for {{ technician.name }}</h2>
+    <form method="post" action="{% url 'add_review' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <a href="{% url 'review_success'%}">Submit Review</a>
+    </form>
+</body>
+{% include 'footer.html' %}
+</html>
+
+
